@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Malaverso · Aluguel de Malas Fashion · Contato via WhatsApp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0b0a0f;
+            font-family: 'Inter', 'Poppins', 'Segoe UI', system-ui, sans-serif;
+            padding: 1.5rem;
+            color: #eef2ff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(125deg, #FFFFFF, #C6BAF0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 0.9rem;
+            color: #b5abda;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #17151f;
+            border-radius: 2rem;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+            padding: 1.5rem;
+            transition: all 0.2s;
+            border: 1px solid rgba(220, 210, 255, 0.1);
+        }
+
+        .card:hover {
+            border-color: rgba(200, 185, 255, 0.3);
+            background: #1c1a26;
+        }
+
+        .card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #f0eaff;
+            margin-bottom: 1.3rem;
+            border-left: 4px solid #b69ef0;
+            padding-left: 0.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #b8afda;
+            margin-bottom: 0.3rem;
+        }
+
+        input, select {
+            background: #0f0e14;
+            border: 1px solid #2e2a3c;
+            padding: 0.7rem 1rem;
+            border-radius: 1.2rem;
+            font-family: inherit;
+            font-size: 0.85rem;
+            color: #f5f0ff;
+            transition: 0.2s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #b392f0;
+            box-shadow: 0 0 0 2px rgba(179, 146, 240, 0.2);
+            background: #14121c;
+        }
+
+        .double-group {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .double-group .form-group {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        hr {
+            margin: 0.8rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #2f2a40, transparent);
+        }
+
+        .price-table {
+            background: #12101b;
+            border-radius: 2rem;
+            padding: 1.2rem;
+            margin: 1rem 0 1.8rem;
+            border: 1px solid rgba(210, 190, 255, 0.25);
+            text-align: center;
+        }
+
+        .price-table h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #f0e6ff;
+            letter-spacing: -0.2px;
+        }
+
+        .price-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .price-card {
+            background: #1e1b2a;
+            border-radius: 1.5rem;
+            padding: 0.8rem 1.2rem;
+            min-width: 110px;
+            border: 1px solid #453b66;
+            transition: 0.1s;
+        }
+
+        .price-card strong {
+            font-size: 1rem;
+            color: #d9c8ff;
+        }
+
+        .price-card span {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #f5e67b;
+        }
+
+        .small-note {
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            color: #9d92c2;
+        }
+
+        .whatsapp-highlight {
+            background: #25a35a20;
+            border-left: 4px solid #25D366;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .btn-rent, .btn-secondary, .btn-fill, .btn-queue {
+            width: 100%;
+            background: linear-gradient(100deg, #2b253b, #110e1a);
+            border: 1px solid rgba(200, 180, 255, 0.5);
+            padding: 0.9rem;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #f3edff;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .btn-secondary {
+            background: #1f1b2a;
+            border-color: rgba(180, 160, 230, 0.4);
+        }
+
+        .btn-fill {
+            background: #26213b;
+            border-color: #a28fdb;
+        }
+
+        .btn-queue {
+            background: #1e1a2c;
+            margin-top: 1rem;
+        }
+
+        .btn-rent:hover, .btn-secondary:hover, .btn-fill:hover, .btn-queue:hover {
+            background: linear-gradient(100deg, #3d3457, #1f1b2e);
+            border-color: #c7b2ff;
+            transform: scale(0.99);
+        }
+
+        .success-message {
+            background: #1d2a1f;
+            border-radius: 2rem;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #d0ffb5;
+            border-left: 8px solid #b6ff9e;
+            margin-top: 1rem;
+        }
+
+        .admin-contact-card {
+            background: #0f1420;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid #3a4a5a;
+            color: #c2e0ff;
+        }
+
+        .queue-panel {
+            background: #12101b;
+            border-radius: 1.8rem;
+            padding: 1.2rem;
+            margin-top: 1.2rem;
+            border: 1px solid rgba(210, 190, 255, 0.2);
+        }
+
+        .queue-card {
+            background: #0e0c16;
+            border-radius: 1.2rem;
+            padding: 1rem;
+            margin: 0.8rem 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #5e5583;
+            border-top: 1px solid #252132;
+            padding-top: 1rem;
+        }
+
+        .flex-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        @media (orientation: landscape) and (max-height: 600px) {
+            body { padding: 1rem; }
+            .dashboard { gap: 1rem; }
+            .card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>🧳 MALAVERSO</h1>
+        <p>aluguel fashion de malas · atendimento personalizado via WhatsApp</p>
+    </div>
+
+    <div class="dashboard">
+        <!-- CLIENTE com WhatsApp -->
+        <div class="card">
+            <h3>👤 SEUS DADOS</h3>
+            <div class="form-group"><label>📛 Nome completo</label><input type="text" id="nome_cliente" placeholder="Ex: Valentina Noir"></div>
+            <div class="form-group"><label>✉️ E-mail</label><input type="email" id="email_cliente" placeholder="valentina@malaverso.com"></div>
+            <div class="double-group">
+                <div class="form-group"><label>📱 WhatsApp (com DDD)</label><input type="text" id="whatsapp_cliente" placeholder="(11) 97654-3210"></div>
+                <div class="form-group"><label>🆔 CPF / Documento</label><input type="text" id="documento_cliente" placeholder="123.456.789-00"></div>
+            </div>
+            <div class="form-group"><label>📅 Data de cadastro</label><input type="datetime-local" id="data_cadastro_cliente"></div>
+            <div class="whatsapp-highlight">
+                💬 Após o cadastro, um administrador do Malaverso entrará em contato pelo seu WhatsApp para acertar o pagamento e enviar o contrato de aluguel.
+            </div>
+        </div>
+
+        <!-- PARCEIRO + ENDEREÇO -->
+        <div class="card">
+            <h3>🤝 PONTO DE RETIRADA</h3>
+            <div class="double-group">
+                <div class="form-group"><label>🏢 Parceiro (nome)</label><input type="text" id="razao_social" placeholder="Malaverso Fashion Hub"></div>
+                <div class="form-group"><label>⭐ Nome fantasia</label><input type="text" id="nome_fantasia" placeholder="Malaverso Boutique"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>🔢 CNPJ</label><input type="text" id="cnpj_parceiro" placeholder="45.678.901/0001-22"></div>
+                <div class="form-group"><label>📞 Telefone</label><input type="text" id="telefone_parceiro" placeholder="(11) 3998-7722"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>✉️ E-mail parceiro</label><input type="email" id="email_parceiro" placeholder="parceiros@malaverso.com"></div>
+                <div class="form-group"><label>📱 WhatsApp parceiro</label><input type="text" id="whatsapp_parceiro" placeholder="(11) 97777-1234"></div>
+            </div>
+            <hr>
+            <div class="form-group"><label>📍 Endereço completo</label></div>
+            <div class="double-group">
+                <div class="form-group"><label>Logradouro</label><input type="text" id="logradouro" placeholder="Rua da Moda"></div>
+                <div class="form-group"><label>Número</label><input type="text" id="numero_end" placeholder="850"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>Complemento</label><input type="text" id="complemento" placeholder="Loja 07"></div>
+                <div class="form-group"><label>Bairro</label><input type="text" id="bairro" placeholder="Vila Olímpia"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>Cidade</label><input type="text" id="cidade" placeholder="São Paulo"></div>
+                <div class="form-group"><label>UF</label><input type="text" id="estado" maxlength="2" placeholder="SP"></div>
+            </div>
+            <div class="form-group"><label>CEP</label><input type="text" id="cep" placeholder="04538-132"></div>
+        </div>
+
+        <!-- PONTO DE COLETA E DEVOLUÇÃO -->
+        <div class="card">
+            <h3>📍 ONDE RETIRAR & DEVOLVER</h3>
+            <div class="form-group"><label>🏷️ Ponto de coleta</label><input type="text" id="nome_ponto_coleta" placeholder="Malaverso Coleta - Jardins"></div>
+            <div class="double-group">
+                <div class="form-group"><label>⏰ Horário funcionamento</label><input type="text" id="horario_coleta" placeholder="09:00-20:00"></div>
+                <div class="form-group"><label>📞 Telefone coleta</label><input type="text" id="telefone_coleta" placeholder="(11) 3555-1122"></div>
+            </div>
+            <div class="form-group"><label>📝 Observação (coleta)</label><input type="text" id="observacao_coleta" placeholder="Retirada no balcão fashion"></div>
+            <hr>
+            <div class="form-group"><label>🔄 Ponto de devolução</label><input type="text" id="nome_ponto_devol" placeholder="Malaverso Devolução - Paulista"></div>
+            <div class="double-group">
+                <div class="form-group"><label>⏰ Horário devolução</label><input type="text" id="horario_devol" placeholder="10:00-19:00"></div>
+                <div class="form-group"><label>📞 Telefone devolução</label><input type="text" id="telefone_devol" placeholder="(11) 3222-4455"></div>
+            </div>
+            <div class="form-group"><label>📝 Obs. devolução</label><input type="text" id="observacao_devol" placeholder="Devolução até 20h"></div>
+        </div>
+
+        <!-- MALA + PREÇO POR DIÁRIA -->
+        <div class="card">
+            <h3>🧳 ESCOLHA SUA MALA</h3>
+            <div class="double-group">
+                <div class="form-group"><label>🔖 Código da mala</label><input type="text" id="codigo_mala" placeholder="MLV-88G"></div>
+                <div class="form-group"><label>📦 Modelo</label><input type="text" id="modelo_mala" placeholder="Carry-on Glam"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>📏 Tamanho</label>
+                    <select id="tamanho_mala">
+                        <option value="Pequena (40cm)">Pequena (40cm) - R$12/dia</option>
+                        <option value="Média (55cm)">Média (55cm) - R$15/dia</option>
+                        <option value="Grande (70cm)">Grande (70cm) - R$18/dia</option>
+                        <option value="Premium (85cm)">Premium (85cm) - R$22/dia</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>🎨 Cor</label><input type="text" id="cor_mala" placeholder="Ice White"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>🧵 Material</label><input type="text" id="material_mala" placeholder="Policarbonato"></div>
+                <div class="form-group"><label>🏷️ Ano fabricação</label><input type="text" id="ano_mala" placeholder="2025"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>⚡ Status atual</label><select id="status_atual_mala"><option>Disponível ✨</option><option>Locada 🧳</option><option>Em higienização 🧼</option></select></div>
+                <div class="form-group"><label>💎 Valor diária (R$)</label><input type="number" step="1" id="valor_diaria" placeholder="15" value="15"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>🏷️ Situação</label><input type="text" id="status_mil" placeholder="DISPONÍVEL"></div>
+                <div class="form-group"><label>📋 Descrição</label><input type="text" id="desc_status_mala" placeholder="Pronta para retirada"></div>
+            </div>
+            <div class="small-note" style="margin-top:6px;">🌟 Dica: quanto mais dias, mais exclusivo fica!</div>
+        </div>
+
+        <!-- AGENDAMENTO com cálculo automático de valor total -->
+        <div class="card">
+            <h3>📅 PERÍODO DO ALUGUEL</h3>
+            <div class="form-group"><label>🗓️ Data do agendamento</label><input type="datetime-local" id="data_agendamento"></div>
+            <div class="double-group">
+                <div class="form-group"><label>Início da locação (data)</label><input type="date" id="data_inicio"></div>
+                <div class="form-group"><label>Hora início</label><input type="time" id="hora_inicio"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>Previsão de devolução</label><input type="date" id="data_fim"></div>
+                <div class="form-group"><label>Hora devolução</label><input type="time" id="hora_fim"></div>
+            </div>
+            <div class="double-group">
+                <div class="form-group"><label>📌 Status do agendamento</label><select id="status_agendamento_select"><option>Confirmado ✅</option><option>Pendente ⏳</option></select></div>
+                <div class="form-group"><label>💎 Valor total (automático)</label><input type="number" step="0.01" id="valor_total_agendamento" readonly style="background:#26203a; font-weight:bold;"></div>
+            </div>
+            <div class="small-note">🔁 O valor total é calculado com base nas diárias e quantidade de dias.</div>
+        </div>
+    </div>
+
+    <!-- TABELA DE PREÇOS ABAIXO DO FORMULÁRIO (sem frase de insegurança) -->
+    <div class="price-table">
+        <h3>✨ VALORES PERSONALIZADOS ✨</h3>
+        <div class="price-grid">
+            <div class="price-card"><strong>⭐ Pequena</strong><br><span>R$ 12</span><br>/diária</div>
+            <div class="price-card"><strong>🌟 Média</strong><br><span>R$ 15</span><br>/diária</div>
+            <div class="price-card"><strong>💎 Grande</strong><br><span>R$ 18</span><br>/diária</div>
+            <div class="price-card"><strong>✨ Premium</strong><br><span>R$ 22</span><br>/diária</div>
+        </div>
+        <div class="small-note" style="background:#1f2a1e; border-radius:1rem; padding:0.4rem; margin-top:0.8rem;">
+            💬 <strong>Após o cadastro, um administrador do Malaverso entrará em contato pelo WhatsApp</strong> para acertar o pagamento e enviar o contrato de aluguel.
+        </div>
+    </div>
+
+    <!-- Botões de ação -->
+    <div style="max-width: 650px; margin: 0 auto;">
+        <div class="flex-buttons">
+            <button class="btn-fill" id="fillDummyBtn">🎲 Preencher com dados fictícios</button>
+            <button class="btn-rent" id="finalizarAluguelBtn">✨ FINALIZAR ALUGUEL ✨</button>
+        </div>
+        <div id="successArea"></div>
+        <div id="queueArea"></div>
+    </div>
+    <footer>🖤 Malaverso · diárias a partir de R$12 · atendimento via WhatsApp para contrato e pagamento</footer>
+</div>
+
+<script>
+    // Função para calcular total baseado na data e diária selecionada
+    function calcularTotalAutomatico() {
+        const inicioStr = document.getElementById('data_inicio').value;
+        const fimStr = document.getElementById('data_fim').value;
+        const diaria = parseFloat(document.getElementById('valor_diaria').value) || 15;
+        if (!inicioStr || !fimStr) {
+            document.getElementById('valor_total_agendamento').value = '';
+            return;
+        }
+        const inicio = new Date(inicioStr);
+        const fim = new Date(fimStr);
+        if (isNaN(inicio) || isNaN(fim) || fim <= inicio) {
+            document.getElementById('valor_total_agendamento').value = '';
+            return;
+        }
+        const diffTime = Math.abs(fim - inicio);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if (diffDays <= 0) return;
+        let total = diaria * diffDays;
+        if (diffDays >= 5) total = total * 0.9;
+        if (diffDays >= 10) total = total * 0.85;
+        document.getElementById('valor_total_agendamento').value = total.toFixed(2);
+    }
+
+    document.getElementById('data_inicio').addEventListener('change', calcularTotalAutomatico);
+    document.getElementById('data_fim').addEventListener('change', calcularTotalAutomatico);
+    document.getElementById('valor_diaria').addEventListener('input', calcularTotalAutomatico);
+    document.getElementById('tamanho_mala').addEventListener('change', function() {
+        const tamanho = this.value;
+        let preco = 15;
+        if (tamanho.includes("Pequena")) preco = 12;
+        else if (tamanho.includes("Média")) preco = 15;
+        else if (tamanho.includes("Grande")) preco = 18;
+        else if (tamanho.includes("Premium")) preco = 22;
+        document.getElementById('valor_diaria').value = preco;
+        calcularTotalAutomatico();
+    });
+
+    // Dados fictícios
+    const dummyData = {
+        nome_cliente: "Valentina Noir",
+        email_cliente: "valentina@malaverso.com",
+        whatsapp_cliente: "(11) 97654-3210",
+        documento_cliente: "456.789.120-33",
+        data_cadastro_cliente: "2026-05-25T10:30",
+        razao_social: "Malaverso Style Hub",
+        nome_fantasia: "Malaverso Boutique",
+        cnpj_parceiro: "45.678.901/0001-22",
+        telefone_parceiro: "(11) 3998-7722",
+        email_parceiro: "parceiros@malaverso.com",
+        whatsapp_parceiro: "(11) 97777-1234",
+        logradouro: "Rua da Moda",
+        numero_end: "850",
+        complemento: "Loja 07",
+        bairro: "Vila Olímpia",
+        cidade: "São Paulo",
+        estado: "SP",
+        cep: "04538-132",
+        nome_ponto_coleta: "Malaverso Coleta - Jardins",
+        horario_coleta: "09:00-20:00",
+        telefone_coleta: "(11) 3555-1122",
+        observacao_coleta: "Retirada no balcão fashion",
+        nome_ponto_devol: "Malaverso Devolução - Paulista",
+        horario_devol: "10:00-19:00",
+        telefone_devol: "(11) 3222-4455",
+        observacao_devol: "Devolução até 20h",
+        codigo_mala: "MLV-77B",
+        modelo_mala: "Light Traveler",
+        tamanho_mala: "Média (55cm) - R$15/dia",
+        cor_mala: "Rose Gold",
+        material_mala: "ABS Leve",
+        ano_mala: "2025",
+        status_atual_mala: "Disponível ✨",
+        valor_diaria: "15",
+        status_mil: "DISPONÍVEL",
+        desc_status_mala: "Pronta para viagem",
+        data_agendamento: "2026-05-25T14:30",
+        data_inicio: "2026-06-10",
+        hora_inicio: "14:00",
+        data_fim: "2026-06-15",
+        hora_fim: "18:00",
+        status_agendamento_select: "Confirmado ✅",
+    };
+
+    function fillDummy() {
+        document.getElementById('nome_cliente').value = dummyData.nome_cliente;
+        document.getElementById('email_cliente').value = dummyData.email_cliente;
+        document.getElementById('whatsapp_cliente').value = dummyData.whatsapp_cliente;
+        document.getElementById('documento_cliente').value = dummyData.documento_cliente;
+        document.getElementById('data_cadastro_cliente').value = dummyData.data_cadastro_cliente;
+        document.getElementById('razao_social').value = dummyData.razao_social;
+        document.getElementById('nome_fantasia').value = dummyData.nome_fantasia;
+        document.getElementById('cnpj_parceiro').value = dummyData.cnpj_parceiro;
+        document.getElementById('telefone_parceiro').value = dummyData.telefone_parceiro;
+        document.getElementById('email_parceiro').value = dummyData.email_parceiro;
+        document.getElementById('whatsapp_parceiro').value = dummyData.whatsapp_parceiro;
+        document.getElementById('logradouro').value = dummyData.logradouro;
+        document.getElementById('numero_end').value = dummyData.numero_end;
+        document.getElementById('complemento').value = dummyData.complemento;
+        document.getElementById('bairro').value = dummyData.bairro;
+        document.getElementById('cidade').value = dummyData.cidade;
+        document.getElementById('estado').value = dummyData.estado;
+        document.getElementById('cep').value = dummyData.cep;
+        document.getElementById('nome_ponto_coleta').value = dummyData.nome_ponto_coleta;
+        document.getElementById('horario_coleta').value = dummyData.horario_coleta;
+        document.getElementById('telefone_coleta').value = dummyData.telefone_coleta;
+        document.getElementById('observacao_coleta').value = dummyData.observacao_coleta;
+        document.getElementById('nome_ponto_devol').value = dummyData.nome_ponto_devol;
+        document.getElementById('horario_devol').value = dummyData.horario_devol;
+        document.getElementById('telefone_devol').value = dummyData.telefone_devol;
+        document.getElementById('observacao_devol').value = dummyData.observacao_devol;
+        document.getElementById('codigo_mala').value = dummyData.codigo_mala;
+        document.getElementById('modelo_mala').value = dummyData.modelo_mala;
+        document.getElementById('tamanho_mala').value = dummyData.tamanho_mala;
+        document.getElementById('cor_mala').value = dummyData.cor_mala;
+        document.getElementById('material_mala').value = dummyData.material_mala;
+        document.getElementById('ano_mala').value = dummyData.ano_mala;
+        document.getElementById('status_atual_mala').value = dummyData.status_atual_mala;
+        document.getElementById('valor_diaria').value = dummyData.valor_diaria;
+        document.getElementById('status_mil').value = dummyData.status_mil;
+        document.getElementById('desc_status_mala').value = dummyData.desc_status_mala;
+        document.getElementById('data_agendamento').value = dummyData.data_agendamento;
+        document.getElementById('data_inicio').value = dummyData.data_inicio;
+        document.getElementById('hora_inicio').value = dummyData.hora_inicio;
+        document.getElementById('data_fim').value = dummyData.data_fim;
+        document.getElementById('hora_fim').value = dummyData.hora_fim;
+        document.getElementById('status_agendamento_select').value = dummyData.status_agendamento_select;
+        calcularTotalAutomatico();
+    }
+
+    let lastRentalData = null;
+
+    function collectFormData() {
+        return {
+            cliente: {
+                nome: document.getElementById('nome_cliente').value,
+                email: document.getElementById('email_cliente').value,
+                whatsapp: document.getElementById('whatsapp_cliente').value,
+                documento: document.getElementById('documento_cliente').value,
+                data_cadastro: document.getElementById('data_cadastro_cliente').value
+            },
+            parceiro: {
+                razao_social: document.getElementById('razao_social').value,
+                nome_fantasia: document.getElementById('nome_fantasia').value,
+                cnpj: document.getElementById('cnpj_parceiro').value,
+                telefone: document.getElementById('telefone_parceiro').value,
+                email: document.getElementById('email_parceiro').value,
+                whatsapp: document.getElementById('whatsapp_parceiro').value
+            },
+            endereco: {
+                logradouro: document.getElementById('logradouro').value,
+                numero: document.getElementById('numero_end').value,
+                complemento: document.getElementById('complemento').value,
+                bairro: document.getElementById('bairro').value,
+                cidade: document.getElementById('cidade').value,
+                estado: document.getElementById('estado').value,
+                cep: document.getElementById('cep').value
+            },
+            pontoColeta: {
+                nome: document.getElementById('nome_ponto_coleta').value,
+                horario: document.getElementById('horario_coleta').value,
+                telefone: document.getElementById('telefone_coleta').value,
+                observacao: document.getElementById('observacao_coleta').value
+            },
+            pontoDevolucao: {
+                nome: document.getElementById('nome_ponto_devol').value,
+                horario: document.getElementById('horario_devol').value,
+                telefone: document.getElementById('telefone_devol').value,
+                observacao: document.getElementById('observacao_devol').value
+            },
+            mala: {
+                codigo: document.getElementById('codigo_mala').value,
+                modelo: document.getElementById('modelo_mala').value,
+                tamanho: document.getElementById('tamanho_mala').value,
+                cor: document.getElementById('cor_mala').value,
+                material: document.getElementById('material_mala').value,
+                ano: document.getElementById('ano_mala').value,
+                status: document.getElementById('status_atual_mala').value,
+                valor_diaria: document.getElementById('valor_diaria').value,
+                status_mil: document.getElementById('status_mil').value,
+                desc_status: document.getElementById('desc_status_mala').value
+            },
+            agendamento: {
+                data_agendamento: document.getElementById('data_agendamento').value,
+                data_inicio: document.getElementById('data_inicio').value,
+                hora_inicio: document.getElementById('hora_inicio').value,
+                data_fim: document.getElementById('data_fim').value,
+                hora_fim: document.getElementById('hora_fim').value,
+                status: document.getElementById('status_agendamento_select').value,
+                valor_total: document.getElementById('valor_total_agendamento').value
+            }
+        };
+    }
+
+    function validateRequired() {
+        const nome = document.getElementById('nome_cliente').value.trim();
+        const email = document.getElementById('email_cliente').value.trim();
+        const whatsapp = document.getElementById('whatsapp_cliente').value.trim();
+        const documento = document.getElementById('documento_cliente').value.trim();
+        const codMala = document.getElementById('codigo_mala').value.trim();
+        const dataInicio = document.getElementById('data_inicio').value;
+        if (!nome) { alert("✨ Por favor, informe seu nome completo."); return false; }
+        if (!email) { alert("📧 Digite seu e-mail."); return false; }
+        if (!whatsapp) { alert("📱 Informe seu WhatsApp para contato."); return false; }
+        if (!documento) { alert("🆔 Precisamos do CPF/documento."); return false; }
+        if (!codMala) { alert("🧳 Informe o código da mala."); return false; }
+        if (!dataInicio) { alert("📅 Selecione a data de início."); return false; }
+        return true;
+    }
+
+    function showSuccessAndQueue() {
+        if (!validateRequired()) return;
+        lastRentalData = collectFormData();
+        
+        const successDiv = document.getElementById('successArea');
+        // Mensagem final com CNPJ e QR Code
+        successDiv.innerHTML = `
+            <div class="success-message">
+                🧳✨ SEU ALUGUEL FOI REGISTRADO COM SUCESSO! ✨🧳
+            </div>
+            <div class="admin-contact-card">
+                💬 <strong>Próximos passos:</strong><br>
+                Um administrador do Malaverso entrará em contato com você através do WhatsApp informado para:<br>
+                • Confirmar os detalhes da sua reserva<br>
+                • Enviar o <strong>contrato de aluguel</strong> para assinatura digital<br>
+                • Acertar o <strong>pagamento via PIX</strong> — a chave será o <strong>CNPJ do Malaverso</strong> (45.678.901/0001-22) ou via QR Code disponibilizado na conversa.<br><br>
+                ✅ Após o contato, o pagamento é feito diretamente via Pix e o contrato é assinado de forma digital.
+            </div>
+            <button class="btn-queue" id="showQueueBtn">📋 Ver meu aluguel na fila</button>
+        `;
+        const oldQueue = document.getElementById('queueArea');
+        if (oldQueue) oldQueue.innerHTML = '';
+        const showBtn = document.getElementById('showQueueBtn');
+        if (showBtn) showBtn.onclick = () => renderQueuePanel();
+        successDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function renderQueuePanel() {
+        if (!lastRentalData) { alert("Finalize um aluguel primeiro."); return; }
+        const queueDiv = document.getElementById('queueArea');
+        const mala = lastRentalData.mala;
+        const agendamento = lastRentalData.agendamento;
+        const queueHtml = `
+            <div class="queue-panel" id="queuePanelInner">
+                <h4>📌 SEU ALUGUEL NA FILA 🧳</h4>
+                <div class="queue-card">
+                    <p><strong>🧳 Mala solicitada:</strong> ${escapeHtml(mala.modelo)} (${escapeHtml(mala.codigo)})</p>
+                    <p><strong>📏 Tamanho:</strong> ${escapeHtml(mala.tamanho)} &nbsp;| <strong>🎨 Cor:</strong> ${escapeHtml(mala.cor)}</p>
+                    <p><strong>📅 Período:</strong> ${agendamento.data_inicio || '—'} até ${agendamento.data_fim || '—'}</p>
+                    <p><strong>💎 Valor total:</strong> R$ ${agendamento.valor_total || '0'}</p>
+                    <button class="btn-secondary" id="adminViewBtn">🔒 Ver dados completos (Administrador)</button>
+                    <div id="adminFullDetails" style="display:none; margin-top:1rem;"></div>
+                </div>
+            </div>
+        `;
+        queueDiv.innerHTML = queueHtml;
+        document.getElementById('adminViewBtn').onclick = () => promptAdminAndShowDetails();
+    }
+
+    function promptAdminAndShowDetails() {
+        const user = prompt("👑 Acesso Administrador Malaverso\nUsuário:");
+        const pass = prompt("Senha:");
+        if (user === "admin" && pass === "malaverso") showFullDetails();
+        else alert("❌ Acesso negado! Credenciais inválidas.");
+    }
+
+    function showFullDetails() {
+        if (!lastRentalData) return;
+        const data = lastRentalData;
+        const container = document.getElementById('adminFullDetails');
+        if (!container) return;
+        container.style.display = "block";
+        container.innerHTML = `<div style="background:#0a0812; padding:1rem; border-radius:1rem;">
+            <strong>📄 DADOS COMPLETOS (Administrador)</strong><br><br>
+            <strong>Cliente:</strong> ${escapeHtml(data.cliente.nome)} | ${escapeHtml(data.cliente.email)}<br>
+            WhatsApp: ${escapeHtml(data.cliente.whatsapp)} | Documento: ${escapeHtml(data.cliente.documento)}<br>
+            <strong>Parceiro:</strong> ${escapeHtml(data.parceiro.razao_social)} - ${escapeHtml(data.parceiro.cnpj)}<br>
+            Endereço: ${escapeHtml(data.endereco.logradouro)}, ${data.endereco.numero} - ${data.endereco.bairro}, ${data.endereco.cidade}/${data.endereco.estado}<br>
+            <strong>Mala:</strong> ${escapeHtml(data.mala.modelo)} (${escapeHtml(data.mala.codigo)}) · diária R$ ${data.mala.valor_diaria}<br>
+            <strong>Período:</strong> ${data.agendamento.data_inicio} até ${data.agendamento.data_fim}<br>
+            <strong>Valor total:</strong> R$ ${data.agendamento.valor_total}<br>
+            <em>✨ Aguardando contato via WhatsApp para pagamento via Pix (CNPJ ou QR Code) e contrato.</em>
+        </div>`;
+    }
+
+    function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m){ return m==='&'?'&amp;':m==='<'?'&lt;':'&gt;'; }); }
+
+    document.getElementById('fillDummyBtn').addEventListener('click', fillDummy);
+    document.getElementById('finalizarAluguelBtn').addEventListener('click', showSuccessAndQueue);
+    window.addEventListener('DOMContentLoaded', () => {
+        calcularTotalAutomatico();
+    });
+</script>
+</body>
+</html>
